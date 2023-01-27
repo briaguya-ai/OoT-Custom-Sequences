@@ -1,0 +1,25 @@
+name: Generate SoH Archive
+
+on:
+  push:
+    branches: [ "test-otr-action" ]
+  pull_request:
+    branches: [ "**" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: install SequenceOTRizer
+      run: |
+        wget https://github.com/leggettc18/SequenceOTRizer/releases/download/v0.2/SequenceOTRizer-0.2-Linux.tar.gz
+        tar -xzvf SequenceOTRizer-0.2-Linux.tar.gz
+        ls
+
+#     - name: Upload generated darunias-joy.otr
+#       uses: actions/upload-artifact@v3
+#       with:
+#         name: darunias-joy.otr
+#         path: build
