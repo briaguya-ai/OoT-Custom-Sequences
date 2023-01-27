@@ -2,7 +2,7 @@ name: Generate SoH Archive
 
 on:
   push:
-    branches: [ "test-otr-action" ]
+    branches: [ "master" ]
   pull_request:
     branches: [ "**" ]
 
