@@ -14,6 +14,7 @@ jobs:
 
     - name: install SequenceOTRizer
       run: |
+        cd data
         wget https://github.com/leggettc18/SequenceOTRizer/releases/download/v0.2/SequenceOTRizer-0.2-Linux.tar.gz
         tar -xzvf SequenceOTRizer-0.2-Linux.tar.gz
         ls
