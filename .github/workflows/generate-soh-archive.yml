@@ -12,17 +12,15 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: install SequenceOTRizer
+    - name: Generate SoH archive
       run: |
         cd data
         wget https://github.com/leggettc18/SequenceOTRizer/releases/download/v0.2/SequenceOTRizer-0.2-Linux.tar.gz
         tar -xzvf SequenceOTRizer-0.2-Linux.tar.gz
         ./SequenceOTRizer --seq-path Music --otr-name daruniasjoy
-        cd mods
-        ls
 
-#     - name: Upload generated daruniasjoy.otr
-#       uses: actions/upload-artifact@v3
-#       with:
-#         name: darunias-joy.otr
-#         path: build
+    - name: Upload generated daruniasjoy.otr
+      uses: actions/upload-artifact@v3
+      with:
+        name: daruniasjoy.otr
+        path: data/mods
